@@ -104,44 +104,64 @@ export default function AdminDashboard() {
         .dashboard {
           display: flex;
           flex-direction: column;
-          gap: 2rem;
+          gap: 3rem;
+        }
+        .dashboard-header {
+          padding-bottom: 1rem;
+          border-bottom: 1px solid rgba(42, 42, 42, 0.5);
         }
         .dashboard-header h1 {
           font-family: "Clash Display", sans-serif;
-          font-size: clamp(1.5rem, 3vw, 2rem);
-          font-weight: 600;
-          margin: 0 0 0.375rem;
+          font-size: clamp(1.75rem, 4vw, 2.25rem);
+          font-weight: 700;
+          margin: 0 0 0.5rem;
           color: var(--text-primary);
+          letter-spacing: -0.4px;
         }
         .subtitle {
           margin: 0;
           color: var(--text-secondary);
           font-size: 0.9375rem;
+          font-weight: 400;
         }
         .stats-grid, .loading-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-          gap: 1.25rem;
+          grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+          gap: 1.5rem;
         }
         .stat-card {
-          background: rgba(18, 18, 18, 0.5);
-          border: 1px solid rgba(124, 58, 237, 0.15);
-          border-radius: 12px;
-          padding: 2rem 1.75rem;
+          background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(18, 18, 18, 0.6) 100%);
+          border: 1px solid rgba(124, 58, 237, 0.2);
+          border-radius: 14px;
+          padding: 2rem;
           display: flex;
           flex-direction: column;
-          gap: 0.75rem;
+          gap: 1rem;
           text-decoration: none;
-          transition: all 0.2s;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          overflow: hidden;
+        }
+        .stat-card::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, transparent 100%);
+          opacity: 0;
+          transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          pointer-events: none;
         }
         .stat-card:hover {
-          background: rgba(18, 18, 18, 0.7);
-          border-color: rgba(124, 58, 237, 0.4);
-          transform: translateY(-4px);
-          box-shadow: 0 8px 16px rgba(124, 58, 237, 0.1);
+          background: linear-gradient(135deg, rgba(40, 40, 40, 0.9) 0%, rgba(18, 18, 18, 0.7) 100%);
+          border-color: rgba(124, 58, 237, 0.5);
+          transform: translateY(-6px);
+          box-shadow: 0 12px 24px rgba(124, 58, 237, 0.12), 0 0 1px rgba(124, 58, 237, 0.1);
+        }
+        .stat-card:hover::before {
+          opacity: 1;
         }
         .stat-card.skeleton {
-          min-height: 120px;
+          min-height: 130px;
           animation: pulse 1.5s ease-in-out infinite;
         }
         @keyframes pulse {
@@ -149,56 +169,79 @@ export default function AdminDashboard() {
           50% { opacity: 0.7; }
         }
         .stat-icon {
-          font-size: 1.25rem;
+          font-size: 1.5rem;
           color: var(--accent-intelligence);
         }
         .stat-value {
           font-family: "Clash Display", sans-serif;
-          font-size: 2rem;
+          font-size: 2.5rem;
           font-weight: 700;
           color: var(--text-primary);
+          line-height: 1;
         }
         .stat-label {
           font-size: 0.875rem;
           color: var(--text-secondary);
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+        .section {
+          padding-top: 1rem;
         }
         .section h2 {
           font-family: "Clash Display", sans-serif;
-          font-size: 1.125rem;
-          font-weight: 600;
-          margin: 0 0 1rem;
+          font-size: 1.375rem;
+          font-weight: 700;
+          margin: 0 0 1.5rem;
           color: var(--text-primary);
+          letter-spacing: -0.3px;
         }
         .actions-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-          gap: 1.25rem;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: 1.5rem;
         }
         .action-card {
-          background: rgba(18, 18, 18, 0.5);
-          border: 1px solid rgba(230, 211, 163, 0.2);
-          border-radius: 12px;
-          padding: 1.75rem;
+          background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(18, 18, 18, 0.6) 100%);
+          border: 1px solid rgba(230, 211, 163, 0.25);
+          border-radius: 14px;
+          padding: 2rem;
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
+          gap: 0.75rem;
           text-decoration: none;
-          transition: all 0.2s;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          overflow: hidden;
+        }
+        .action-card::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(230, 211, 163, 0.08) 0%, transparent 100%);
+          opacity: 0;
+          transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          pointer-events: none;
         }
         .action-card:hover {
-          background: rgba(18, 18, 18, 0.7);
-          border-color: rgba(230, 211, 163, 0.4);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 16px rgba(230, 211, 163, 0.08);
+          background: linear-gradient(135deg, rgba(40, 40, 40, 0.9) 0%, rgba(18, 18, 18, 0.7) 100%);
+          border-color: rgba(230, 211, 163, 0.5);
+          transform: translateY(-4px);
+          box-shadow: 0 12px 24px rgba(230, 211, 163, 0.1), 0 0 1px rgba(230, 211, 163, 0.1);
+        }
+        .action-card:hover::before {
+          opacity: 1;
         }
         .action-label {
-          font-weight: 600;
+          font-weight: 700;
           color: var(--accent-authority);
-          font-size: 0.9375rem;
+          font-size: 1rem;
         }
         .action-desc {
           font-size: 0.8125rem;
           color: var(--text-secondary);
+          font-weight: 400;
         }
       `}</style>
       </AdminLayout>

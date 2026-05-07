@@ -75,38 +75,44 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           background: var(--bg-primary);
         }
         .sidebar {
-          width: 260px;
-          background: var(--bg-card);
-          border-right: 1px solid var(--border-muted);
+          width: 280px;
+          background: linear-gradient(180deg, var(--bg-card) 0%, rgba(18, 18, 18, 0.8) 100%);
+          border-right: 1px solid rgba(42, 42, 42, 0.5);
           display: flex;
           flex-direction: column;
           position: fixed;
           inset: 0 auto 0 0;
           z-index: 100;
           transition: transform 0.3s ease;
+          backdrop-filter: blur(10px);
         }
         .sidebar-header {
-          padding: 1.5rem;
+          padding: 2rem 1.5rem 1.5rem;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          border-bottom: 1px solid var(--border-muted);
+          border-bottom: 1px solid rgba(42, 42, 42, 0.5);
         }
         .brand {
           display: flex;
           align-items: center;
-          gap: 0.625rem;
+          gap: 0.75rem;
           text-decoration: none;
           color: var(--text-primary);
+          transition: opacity 0.2s;
+        }
+        .brand:hover {
+          opacity: 0.8;
         }
         .brand-icon {
           color: var(--accent-authority);
-          font-size: 1.25rem;
+          font-size: 1.5rem;
         }
         .brand-text {
           font-family: "Clash Display", sans-serif;
-          font-weight: 600;
-          font-size: 1.125rem;
+          font-weight: 700;
+          font-size: 1.25rem;
+          letter-spacing: -0.3px;
         }
         .mobile-close {
           display: none;
@@ -118,64 +124,68 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         }
         .sidebar-nav {
           flex: 1;
-          padding: 1rem 0.75rem;
+          padding: 1.5rem 0.875rem;
           display: flex;
           flex-direction: column;
-          gap: 0.25rem;
+          gap: 0.5rem;
         }
         .nav-item {
           display: flex;
           align-items: center;
-          gap: 0.75rem;
-          padding: 0.75rem 1rem;
-          border-radius: 8px;
+          gap: 0.875rem;
+          padding: 0.875rem 1.125rem;
+          border-radius: 10px;
           text-decoration: none;
           color: var(--text-secondary);
-          font-size: 0.875rem;
+          font-size: 0.9375rem;
           font-weight: 500;
-          transition: all 0.2s;
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
           border: 1px solid transparent;
+          position: relative;
         }
         .nav-item:hover {
-          background: rgba(124, 58, 237, 0.08);
+          background: rgba(124, 58, 237, 0.12);
           color: var(--text-primary);
-          border-color: rgba(124, 58, 237, 0.15);
+          border-color: rgba(124, 58, 237, 0.2);
+          transform: translateX(4px);
         }
         .nav-item.active {
-          background: rgba(124, 58, 237, 0.15);
-          color: #e5d4ff;
-          border: 1px solid rgba(124, 58, 237, 0.3);
+          background: linear-gradient(135deg, rgba(124, 58, 237, 0.25) 0%, rgba(124, 58, 237, 0.15) 100%);
+          color: #f0e7ff;
+          border: 1px solid rgba(124, 58, 237, 0.4);
           font-weight: 600;
-          box-shadow: 0 0 12px rgba(124, 58, 237, 0.1);
+          box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
         .nav-icon {
-          font-size: 0.75rem;
+          font-size: 1rem;
           width: 20px;
           text-align: center;
+          flex-shrink: 0;
         }
         .sidebar-footer {
-          padding: 1rem 0.75rem;
-          border-top: 1px solid var(--border-muted);
+          padding: 1.5rem 0.875rem;
+          border-top: 1px solid rgba(42, 42, 42, 0.5);
         }
         .logout-btn {
           width: 100%;
-          padding: 0.625rem;
-          border-radius: 8px;
-          border: 1px solid var(--border-muted);
-          background: transparent;
+          padding: 0.75rem;
+          border-radius: 10px;
+          border: 1px solid rgba(42, 42, 42, 0.8);
+          background: rgba(255, 255, 255, 0.02);
           color: var(--text-secondary);
-          font-size: 0.875rem;
+          font-size: 0.9375rem;
+          font-weight: 500;
           cursor: pointer;
-          transition: all 0.2s;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .logout-btn:hover {
-          border-color: rgba(239, 68, 68, 0.4);
+          border-color: rgba(239, 68, 68, 0.5);
           color: #fca5a5;
-          background: rgba(239, 68, 68, 0.06);
+          background: rgba(239, 68, 68, 0.1);
         }
         .main-wrapper {
           flex: 1;
-          margin-left: 260px;
+          margin-left: 280px;
           display: flex;
           flex-direction: column;
           min-width: 0;
@@ -184,8 +194,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           display: none;
           align-items: center;
           gap: 1rem;
-          padding: 1rem 1.25rem;
-          border-bottom: 1px solid var(--border-muted);
+          padding: 1.25rem 1.5rem;
+          border-bottom: 1px solid rgba(42, 42, 42, 0.5);
           background: var(--bg-card);
           position: sticky;
           top: 0;
@@ -198,7 +208,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           background: none;
           border: none;
           cursor: pointer;
-          padding: 4px;
+          padding: 8px;
         }
         .mobile-toggle span {
           display: block;
@@ -206,26 +216,30 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           height: 2px;
           background: var(--text-secondary);
           border-radius: 1px;
+          transition: all 0.2s;
         }
         .page-title {
           font-family: "Clash Display", sans-serif;
           font-weight: 600;
           color: var(--text-primary);
+          font-size: 1rem;
         }
         .main-content {
           flex: 1;
-          padding: 2rem;
+          padding: 2.5rem;
           overflow-x: auto;
+          background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(18, 18, 18, 0.5) 100%);
         }
         .sidebar-backdrop {
           display: none;
           position: fixed;
           inset: 0;
-          background: rgba(0, 0, 0, 0.6);
+          background: rgba(0, 0, 0, 0.7);
           z-index: 90;
         }
         @media (max-width: 768px) {
           .sidebar {
+            width: 260px;
             transform: translateX(-100%);
           }
           .sidebar.open {
@@ -241,7 +255,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             display: flex;
           }
           .main-content {
-            padding: 1.25rem;
+            padding: 1.5rem;
           }
           .sidebar-backdrop {
             display: block;

@@ -152,103 +152,115 @@ export default function MetricsForm({ metrics, onSuccess }: MetricsFormProps) {
         .metrics-form {
           display: flex;
           flex-direction: column;
-          gap: 1.5rem;
+          gap: 2rem;
         }
         .metrics-list {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 1.25rem;
         }
         .metric-card {
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid var(--border-muted);
-          border-radius: 10px;
-          padding: 1.25rem;
+          background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(18, 18, 18, 0.6) 100%);
+          border: 1px solid rgba(124, 58, 237, 0.15);
+          border-radius: 12px;
+          padding: 1.75rem;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .metric-card:hover {
+          border-color: rgba(124, 58, 237, 0.25);
+          box-shadow: 0 4px 12px rgba(124, 58, 237, 0.06);
         }
         .metric-header {
           display: flex;
           align-items: center;
-          gap: 0.625rem;
-          margin-bottom: 1rem;
+          gap: 0.75rem;
+          margin-bottom: 1.25rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid rgba(42, 42, 42, 0.5);
         }
         .metric-number {
-          width: 24px;
-          height: 24px;
-          border-radius: 6px;
-          background: rgba(124, 58, 237, 0.15);
-          color: #c4b5fd;
-          font-size: 0.75rem;
+          width: 28px;
+          height: 28px;
+          border-radius: 8px;
+          background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(124, 58, 237, 0.1) 100%);
+          color: #d4c5f9;
+          font-size: 0.8125rem;
           font-weight: 700;
           display: flex;
           align-items: center;
           justify-content: center;
+          border: 1px solid rgba(124, 58, 237, 0.2);
         }
         .metric-label-display {
           font-family: "Clash Display", sans-serif;
           font-weight: 600;
-          font-size: 0.9375rem;
+          font-size: 1rem;
           color: var(--text-primary);
         }
         .metric-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 1rem;
+          gap: 1.25rem;
         }
         .field {
           display: flex;
           flex-direction: column;
-          gap: 0.375rem;
+          gap: 0.5rem;
         }
         .field label {
           font-size: 0.8125rem;
-          font-weight: 500;
+          font-weight: 600;
           color: var(--text-secondary);
           text-transform: uppercase;
-          letter-spacing: 0.04em;
+          letter-spacing: 0.5px;
         }
         .field input,
         .field select {
-          padding: 0.625rem 0.875rem;
-          border-radius: 8px;
-          border: 1px solid var(--border-muted);
-          background: rgba(255, 255, 255, 0.08);
+          padding: 0.75rem 1rem;
+          border-radius: 10px;
+          border: 1px solid rgba(42, 42, 42, 0.8);
+          background: rgba(255, 255, 255, 0.05);
           color: var(--text-primary);
           font-size: 0.9375rem;
           outline: none;
-          transition: border-color 0.2s, box-shadow 0.2s;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
           font-family: inherit;
         }
         .field input::placeholder {
-          color: rgba(160, 160, 160, 0.8);
+          color: rgba(160, 160, 160, 0.7);
         }
         .field input:focus,
         .field select:focus {
           border-color: var(--accent-intelligence);
-          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+          background: rgba(255, 255, 255, 0.08);
+          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
         }
         .error {
           color: #fca5a5;
           font-size: 0.8125rem;
+          font-weight: 500;
         }
         .form-actions {
           display: flex;
           justify-content: flex-end;
-          padding-top: 0.5rem;
-          border-top: 1px solid var(--border-muted);
+          gap: 0.75rem;
+          padding-top: 1.5rem;
+          border-top: 1px solid rgba(42, 42, 42, 0.5);
         }
         .btn-primary {
-          padding: 0.625rem 1.5rem;
-          border-radius: 8px;
+          padding: 0.75rem 1.75rem;
+          border-radius: 10px;
           border: none;
           background: var(--accent-authority);
           color: #0a0a0a;
           font-weight: 600;
-          font-size: 0.875rem;
+          font-size: 0.9375rem;
           cursor: pointer;
-          transition: opacity 0.2s;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .btn-primary:hover:not(:disabled) {
-          opacity: 0.9;
+          opacity: 0.85;
+          transform: translateY(-1px);
         }
         .btn-primary:disabled {
           opacity: 0.5;
