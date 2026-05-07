@@ -203,7 +203,7 @@ export default function VenueForm({ venue, onSuccess, onCancel }: VenueFormProps
           padding: 0.625rem 0.875rem;
           border-radius: 8px;
           border: 1px solid var(--border-muted);
-          background: rgba(255, 255, 255, 0.03);
+          background: rgba(255, 255, 255, 0.08);
           color: var(--text-primary);
           font-size: 0.9375rem;
           outline: none;
@@ -233,7 +233,7 @@ export default function VenueForm({ venue, onSuccess, onCancel }: VenueFormProps
           border-radius: 6px;
           border: 1px solid var(--border-muted);
           object-fit: contain;
-          background: rgba(255, 255, 255, 0.03);
+          background: rgba(255, 255, 255, 0.08);
         }
         .form-actions {
           display: flex;

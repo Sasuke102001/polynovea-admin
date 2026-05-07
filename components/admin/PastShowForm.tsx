@@ -222,7 +222,7 @@ export default function PastShowForm({ show, onSuccess, onCancel }: PastShowForm
           padding: 0.625rem 0.875rem;
           border-radius: 8px;
           border: 1px solid var(--border-muted);
-          background: rgba(255, 255, 255, 0.03);
+          background: rgba(255, 255, 255, 0.08);
           color: var(--text-primary);
           font-size: 0.9375rem;
           outline: none;
