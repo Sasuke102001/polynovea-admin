@@ -153,10 +153,11 @@ export default function EventTable({ events, onRefresh, onEdit }: EventTableProp
           padding: 0.5rem 0.75rem;
           border-radius: 8px;
           border: 1px solid var(--border-muted);
-          background: rgba(255, 255, 255, 0.03);
+          background: rgba(255, 255, 255, 0.06);
           color: var(--text-primary);
           font-size: 0.875rem;
           outline: none;
+          cursor: pointer;
         }
         .btn-clear {
           padding: 0.5rem 0.875rem;
