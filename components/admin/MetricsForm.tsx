@@ -218,6 +218,9 @@ export default function MetricsForm({ metrics, onSuccess }: MetricsFormProps) {
           transition: border-color 0.2s, box-shadow 0.2s;
           font-family: inherit;
         }
+        .field input::placeholder {
+          color: rgba(160, 160, 160, 0.8);
+        }
         .field input:focus,
         .field select:focus {
           border-color: var(--accent-intelligence);

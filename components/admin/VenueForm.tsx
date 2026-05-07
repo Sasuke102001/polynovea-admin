@@ -210,6 +210,10 @@ export default function VenueForm({ venue, onSuccess, onCancel }: VenueFormProps
           transition: border-color 0.2s, box-shadow 0.2s;
           font-family: inherit;
         }
+        .field input::placeholder,
+        .field textarea::placeholder {
+          color: rgba(160, 160, 160, 0.8);
+        }
         .field input:focus,
         .field select:focus,
         .field textarea:focus {
