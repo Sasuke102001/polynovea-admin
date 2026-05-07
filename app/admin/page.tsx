@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import AdminLayout from "@/components/admin/AdminLayout";
-import ProtectedRoute from "@/components/admin/ProtectedRoute";
 import Toast from "@/components/admin/Toast";
 import type { LiveEvent, PastShow, VenuePartnership, BlogPost, LiveMetric } from "@/lib/admin/types";
 
@@ -63,9 +62,8 @@ export default function AdminDashboard() {
   ];
 
   return (
-    <ProtectedRoute>
-      <AdminLayout>
-        <div className="dashboard">
+    <AdminLayout>
+      <div className="dashboard">
           <div className="dashboard-header">
             <h1>Dashboard</h1>
             <p className="subtitle">Overview of your Polynovea Records content.</p>
@@ -204,6 +202,6 @@ export default function AdminDashboard() {
           color: var(--text-secondary);
         }
       `}</style>
-    </ProtectedRoute>
+    </AdminLayout>
   );
 }
