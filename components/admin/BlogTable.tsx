@@ -156,13 +156,19 @@ export default function BlogTable({ posts, onRefresh, onEdit }: BlogTableProps) 
           flex-wrap: wrap;
         }
         .filters select {
-          padding: 0.5rem 0.75rem;
+          padding: 0.625rem 0.875rem;
           border-radius: 8px;
           border: 1px solid var(--border-muted);
-          background: rgba(255, 255, 255, 0.03);
+          background: rgba(255, 255, 255, 0.15);
           color: var(--text-primary);
           font-size: 0.875rem;
           outline: none;
+          transition: border-color 0.2s;
+          cursor: pointer;
+        }
+        .filters select:focus {
+          border-color: var(--accent-intelligence);
+          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
         }
         .btn-clear {
           padding: 0.5rem 0.875rem;

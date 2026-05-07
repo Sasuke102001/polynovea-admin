@@ -123,23 +123,25 @@ export default function AdminDashboard() {
         }
         .stats-grid, .loading-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-          gap: 1rem;
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+          gap: 1.25rem;
         }
         .stat-card {
-          background: var(--bg-card);
-          border: 1px solid var(--border-muted);
+          background: rgba(18, 18, 18, 0.5);
+          border: 1px solid rgba(124, 58, 237, 0.15);
           border-radius: 12px;
-          padding: 1.5rem;
+          padding: 2rem 1.75rem;
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
+          gap: 0.75rem;
           text-decoration: none;
           transition: all 0.2s;
         }
         .stat-card:hover {
-          border-color: rgba(124, 58, 237, 0.3);
-          transform: translateY(-2px);
+          background: rgba(18, 18, 18, 0.7);
+          border-color: rgba(124, 58, 237, 0.4);
+          transform: translateY(-4px);
+          box-shadow: 0 8px 16px rgba(124, 58, 237, 0.1);
         }
         .stat-card.skeleton {
           min-height: 120px;
@@ -172,22 +174,25 @@ export default function AdminDashboard() {
         }
         .actions-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-          gap: 1rem;
+          grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+          gap: 1.25rem;
         }
         .action-card {
-          background: var(--bg-card);
-          border: 1px solid var(--border-muted);
+          background: rgba(18, 18, 18, 0.5);
+          border: 1px solid rgba(230, 211, 163, 0.2);
           border-radius: 12px;
-          padding: 1.25rem;
+          padding: 1.75rem;
           display: flex;
           flex-direction: column;
-          gap: 0.375rem;
+          gap: 0.5rem;
           text-decoration: none;
           transition: all 0.2s;
         }
         .action-card:hover {
-          border-color: var(--accent-authority);
+          background: rgba(18, 18, 18, 0.7);
+          border-color: rgba(230, 211, 163, 0.4);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 16px rgba(230, 211, 163, 0.08);
         }
         .action-label {
           font-weight: 600;
