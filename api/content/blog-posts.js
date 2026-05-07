@@ -1,4 +1,4 @@
-const { supabase, authenticate, response } = require('../middleware');
+import { supabase, authenticate, response } from '../middleware.js';
 
 export default async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json');
