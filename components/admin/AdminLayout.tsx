@@ -127,21 +127,26 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           display: flex;
           align-items: center;
           gap: 0.75rem;
-          padding: 0.625rem 0.875rem;
+          padding: 0.75rem 1rem;
           border-radius: 8px;
           text-decoration: none;
           color: var(--text-secondary);
           font-size: 0.875rem;
+          font-weight: 500;
           transition: all 0.2s;
+          border: 1px solid transparent;
         }
         .nav-item:hover {
-          background: rgba(255, 255, 255, 0.04);
+          background: rgba(124, 58, 237, 0.08);
           color: var(--text-primary);
+          border-color: rgba(124, 58, 237, 0.15);
         }
         .nav-item.active {
-          background: rgba(124, 58, 237, 0.1);
-          color: #c4b5fd;
-          border: 1px solid rgba(124, 58, 237, 0.2);
+          background: rgba(124, 58, 237, 0.15);
+          color: #e5d4ff;
+          border: 1px solid rgba(124, 58, 237, 0.3);
+          font-weight: 600;
+          box-shadow: 0 0 12px rgba(124, 58, 237, 0.1);
         }
         .nav-icon {
           font-size: 0.75rem;
