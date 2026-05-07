@@ -219,25 +219,28 @@ export default function PastShowForm({ show, onSuccess, onCancel }: PastShowForm
         .field input,
         .field select,
         .field textarea {
-          padding: 0.625rem 0.875rem;
-          border-radius: 8px;
+          width: 100%;
+          padding: 0.75rem 1rem;
+          border-radius: 10px;
           border: 1px solid var(--border-muted);
-          background: rgba(255, 255, 255, 0.08);
+          background: var(--bg-card);
           color: var(--text-primary);
           font-size: 0.9375rem;
+          line-height: 1.5;
           outline: none;
-          transition: border-color 0.2s, box-shadow 0.2s;
+          transition: all 0.2s ease;
           font-family: inherit;
         }
         .field input::placeholder,
         .field textarea::placeholder {
-          color: rgba(160, 160, 160, 0.8);
+          color: var(--text-muted);
         }
         .field input:focus,
         .field select:focus,
         .field textarea:focus {
           border-color: var(--accent-intelligence);
-          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+          background: var(--bg-elevated);
+          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18);
         }
         .field textarea {
           resize: vertical;

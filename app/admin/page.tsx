@@ -104,11 +104,11 @@ export default function AdminDashboard() {
         .dashboard {
           display: flex;
           flex-direction: column;
-          gap: 3rem;
+          gap: var(--space-2xl);
         }
         .dashboard-header {
-          padding-bottom: 1rem;
-          border-bottom: 1px solid rgba(42, 42, 42, 0.5);
+          padding-bottom: var(--space-md);
+          border-bottom: 1px solid var(--border-muted);
         }
         .dashboard-header h1 {
           font-family: "Clash Display", sans-serif;
@@ -127,38 +127,23 @@ export default function AdminDashboard() {
         .stats-grid, .loading-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-          gap: 1.5rem;
+          gap: var(--space-lg);
         }
         .stat-card {
-          background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(18, 18, 18, 0.6) 100%);
-          border: 1px solid rgba(124, 58, 237, 0.2);
-          border-radius: 14px;
-          padding: 2rem;
+          background: var(--bg-card);
+          border: 1px solid var(--border-muted);
+          border-radius: 12px;
+          padding: var(--space-xl);
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: var(--space-md);
           text-decoration: none;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          position: relative;
-          overflow: hidden;
-        }
-        .stat-card::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, transparent 100%);
-          opacity: 0;
-          transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          pointer-events: none;
+          transition: all 0.2s ease;
         }
         .stat-card:hover {
-          background: linear-gradient(135deg, rgba(40, 40, 40, 0.9) 0%, rgba(18, 18, 18, 0.7) 100%);
-          border-color: rgba(124, 58, 237, 0.5);
-          transform: translateY(-6px);
-          box-shadow: 0 12px 24px rgba(124, 58, 237, 0.12), 0 0 1px rgba(124, 58, 237, 0.1);
-        }
-        .stat-card:hover::before {
-          opacity: 1;
+          border-color: rgba(124, 58, 237, 0.3);
+          background: var(--bg-elevated);
+          box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
         }
         .stat-card.skeleton {
           min-height: 130px;
@@ -200,38 +185,23 @@ export default function AdminDashboard() {
         .actions-grid {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-          gap: 1.5rem;
+          gap: var(--space-lg);
         }
         .action-card {
-          background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(18, 18, 18, 0.6) 100%);
-          border: 1px solid rgba(230, 211, 163, 0.25);
-          border-radius: 14px;
-          padding: 2rem;
+          background: var(--bg-card);
+          border: 1px solid var(--border-muted);
+          border-radius: 12px;
+          padding: var(--space-xl);
           display: flex;
           flex-direction: column;
-          gap: 0.75rem;
+          gap: var(--space-sm);
           text-decoration: none;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          position: relative;
-          overflow: hidden;
-        }
-        .action-card::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(135deg, rgba(230, 211, 163, 0.08) 0%, transparent 100%);
-          opacity: 0;
-          transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          pointer-events: none;
+          transition: all 0.2s ease;
         }
         .action-card:hover {
-          background: linear-gradient(135deg, rgba(40, 40, 40, 0.9) 0%, rgba(18, 18, 18, 0.7) 100%);
-          border-color: rgba(230, 211, 163, 0.5);
-          transform: translateY(-4px);
-          box-shadow: 0 12px 24px rgba(230, 211, 163, 0.1), 0 0 1px rgba(230, 211, 163, 0.1);
-        }
-        .action-card:hover::before {
-          opacity: 1;
+          border-color: var(--accent-authority);
+          background: var(--bg-elevated);
+          box-shadow: 0 4px 12px rgba(230, 211, 163, 0.1);
         }
         .action-label {
           font-weight: 700;

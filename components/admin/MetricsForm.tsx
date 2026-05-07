@@ -160,15 +160,15 @@ export default function MetricsForm({ metrics, onSuccess }: MetricsFormProps) {
           gap: 1.25rem;
         }
         .metric-card {
-          background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(18, 18, 18, 0.6) 100%);
-          border: 1px solid rgba(124, 58, 237, 0.15);
+          background: var(--bg-card);
+          border: 1px solid var(--border-muted);
           border-radius: 12px;
-          padding: 1.75rem;
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          padding: var(--space-lg);
+          transition: all 0.2s ease;
         }
         .metric-card:hover {
-          border-color: rgba(124, 58, 237, 0.25);
-          box-shadow: 0 4px 12px rgba(124, 58, 237, 0.06);
+          border-color: rgba(124, 58, 237, 0.2);
+          background: var(--bg-elevated);
         }
         .metric-header {
           display: flex;
@@ -216,24 +216,26 @@ export default function MetricsForm({ metrics, onSuccess }: MetricsFormProps) {
         }
         .field input,
         .field select {
-          padding: 0.75rem 1rem;
+          width: 100%;
+          padding: var(--space-sm) var(--space-md);
           border-radius: 10px;
-          border: 1px solid rgba(42, 42, 42, 0.8);
-          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid var(--border-muted);
+          background: var(--bg-card);
           color: var(--text-primary);
           font-size: 0.9375rem;
+          line-height: 1.5;
           outline: none;
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.2s ease;
           font-family: inherit;
         }
         .field input::placeholder {
-          color: rgba(160, 160, 160, 0.7);
+          color: var(--text-muted);
         }
         .field input:focus,
         .field select:focus {
           border-color: var(--accent-intelligence);
-          background: rgba(255, 255, 255, 0.08);
-          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+          background: var(--bg-elevated);
+          box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18);
         }
         .error {
           color: #fca5a5;
