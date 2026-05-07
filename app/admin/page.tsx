@@ -100,8 +100,7 @@ export default function AdminDashboard() {
           </div>
         </div>
         <Toast />
-      </AdminLayout>
-      <style jsx>{`
+        <style jsx>{`
         .dashboard {
           display: flex;
           flex-direction: column;
@@ -202,6 +201,6 @@ export default function AdminDashboard() {
           color: var(--text-secondary);
         }
       `}</style>
-    </AdminLayout>
+      </AdminLayout>
   );
 }
